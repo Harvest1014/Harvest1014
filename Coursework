@@ -1,0 +1,361 @@
+# Harvest1014
+Coursework
+Question 1 ''' Function that shuffles an array of integers '''
+
+Code
+import random
+list1 = [1, 2, 3, 4, 5, 6, 7] #The list being used
+for x in range (20):          #Loop to the array length
+    Num1 = random.randint(0,len(list1)-1)
+    Num2 = random.randint(0,len(list1)-1 #Create temp list of random numbers from loop
+
+    temp = list1[Num1]
+    list1[Num1] = list1[Num2]   #Switching the arrays around
+    list1[Num2] = temp
+print (list1)
+
+Question 2 ''' Function that counts the trailing 0s of a number '''
+
+Code
+def prime_of_five (x):
+    Five = 5             #Declaring the number that’s going to be used
+    Number = 0		#Output value of 0s
+    while x >= Five:
+        Number += x // Five         #Divides number with 5 
+        Five *= 5
+    return Number
+print(prime_of_five(10))
+
+
+Question 3 ''' Function that returns the highest perfect square'''
+
+Pseudocode
+INPUT = INPUT (integer)
+FUNCTION SQUARE (INPUT):
+OUTPUT = 0
+INPUT = square root (INPUT)
+INPUT = round down (INPUT)
+OUTPUT = INPUT * INPUT
+
+Code
+i = int(input("Enter Number"))
+import math
+def square(i):
+	result = 0
+	i = math.sqrt(i)     #Where it square roots the number
+	i = math.floor(i)    #Where it round it down
+	result = i*i 	
+	print(result)
+print(square(i))
+
+Question 4
+Week 1 – Random Number - Big Notation = O(N)
+import random
+list1 = [1, 2, 3, 4, 5, 6, 7]						      1
+for x in range (20):						              N
+    Num1 = random.randint(0,len(list1)-1)			N
+    Num2 = random.randint(0,len(list1)-1)			N
+
+    temp = list1[Num1]						            N
+    list1[Num1] = list1[Num2]					        N
+    list1[Num2] = temp						            N
+print (list1)							                    1
+
+
+Week 1 – Prime of Five - Big Notation = O(N)
+def prime_of_five (x):
+    Five = 5							                    1
+    Number = 0							                  1
+    while x >= Five:						              N
+        Number += x // Five					          N
+        Five *= 5							                N
+    return Number						                  N
+print(prime_of_five(10))					            1
+
+Question 5 ''' Function for addition, subtraction and multiplication for two matrices'''
+Pseudocode
+Function adding (matrix1, matrix2):
+	For X in range from 0 to length of matrix1
+		For Y in range from 0 to length of matrix2 index 0(N)
+			Sum[X][Y]  matrix1[X][Y]+matrix2[X][Y]
+Return sum
+
+Function minus (matrix1, matrix2):
+	For X in range from 0 to length of matrix1
+		For Y in range from 0 to length of matrix2 index 0(N)
+			Sum[X][Y]  matrix1[X][Y]+matrix2[X][Y]
+Return sum
+
+Function multiply (matrix1, matrix2):
+	For X in range from 0 to length of matrix1
+		For Y in range from 0 to length of matrix2 index 0(N)
+			For Z in matrix2
+			Result[X][Y]  (result[X][Y] + (matrix1[X][Y] * matrix2[Z][Y])
+Return result
+
+Big O Notation = O(N^3)
+
+Question 6 '''Function that reverse the words in a sentence'''
+Pseudocode
+FUNCTION SWITCH(sentence)
+    answer  ' '
+    temp  ' '
+    FOR char in sentence:
+        IF char ≠ ' '
+            temp  char
+        ELSE
+            answer  temp + ' ' + answer
+            temp  ' '
+    answer  temp + ' ' + answer
+    RETURN answer
+
+Big O Notation = O(N)
+
+Code
+def Reverse_sentence(sentence):
+    word = ''
+    temp = ''			#The string that’s being used to switch around the words
+    for char in sentence:
+        if char != ' ':        
+            temp += char
+        else:
+            word = temp + ' ' + word    #Where it switches the words
+            temp = ''
+    word = temp + ' ' + word
+    return word               #Connects the words back together
+print(Reverse_sentence("Hello to everybody"))
+
+Question 7 '''Function that checks if a number is a prime number'''
+Pseudocode
+FUNCTION PRIME(temp, x)
+IF x  1
+	Print “Is not prime”
+ELSE
+	IF temp == x:
+		PRINT “Is prime”
+	ELSE
+		IF x is %temp == 0
+			Print “Is prime”
+		ELSE
+			RETURN PRIME (temp+1, x)
+Code
+x = int(input("Enter number"))
+temp = 2
+def prime_orNot(temp, x):
+	if x <= 1:
+		print("Is not prime")
+	else:
+		if temp == x:
+			print("Is prime")  #Base case because of the temp == 2
+		else:
+			if (x % temp) == 0:  #Divisible with remainder 0
+				print("Is not prime")
+			else:
+				return prime(temp+1, x)
+print(prime_orNot(temp, x))
+
+Question 8 '''Function the removes vowels from a sentence'''
+Pseudocode
+FUNCTION REMOVE_VOWEL(string)
+IF STRING LENGTH = 0
+IF STRING [0] in vowel
+		RETURN(“” + FUNCTION (INPUT -1 CHARACTER) 
+	ELSE
+		RETURN(INPUT[0] REMOVE_VOWEL(INPUT – 1 CHARACTER)
+ELSE
+	RETURN
+Code
+x = str(input("Enter A Word"))
+def remove_vowel(x):
+        Vowels = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")  #Declares what is going to be removed
+        if x: 
+                if x[0] in Vowels: 
+                        return(""+remove_vowel(x[1:]))  #Removes vowels from the sentence
+                else:
+                        return(x[0]+remove_vowel(x[1:]))  #Keeps the words that arent declared 
+        else:
+                return("")  #Returns empty if there are no words
+
+print(remove_vowel(x))
+
+Question 9 '''Function to find values within the list''' 
+Pseudocode
+FUNCTION BINARY SEARCH(data, a, b)
+    another_list  []
+    for i in range(a,b)
+        another_list.append(i)
+    FIRST  0
+    LAST  len(data) - 1
+    FOUND  False
+    WHILE first <= last and not found
+        MIDPOINT  (first + last) // 2
+        IF data[midpoint] in another_list
+            found  True
+        ELSE
+            IF max(another_list) < data [midpoint]:
+                last  midpoint - 1
+            ELSE
+                first  midpoint + 1
+        RETURN found
+b  list
+
+Code - Big O Notation = O(N^2)
+list = [2,3,5,7,9,13,17,19,23,27,29]    #List being used
+def Binary_Search(data, a, b):
+    first = 0       #A Pointer of the list
+    last = len(data) - 1
+    found = False
+    while first <= last and not found:
+        midpoint = (first + last) // 2
+        print(first,last,data[midpoint]) #outputs the range
+        if data[midpoint] in range(a,b):
+            found = True
+        else:
+            if (a,b) < data [midpoint]:
+                last = midpoint - 1
+            else:
+                first = midpoint + 1
+    return found   #Retrieves the output of the data
+b = list
+print (Binary_Search(b,10,15))
+
+Question 10 '''Function to find the largest sequence on a list'''
+Code
+def Sequence(lst):
+    print("The Sequence: " + str(lst))
+    seq = [] 		#temporary output
+    l = len(lst)
+    x = 1
+    while x < l:
+        if x != l-1:		#Search for the subsequence
+            if lst[x] > lst[x-1] or lst[x] < lst[x+1]:
+                seq.append(lst[x])
+                x = x + 1
+            else:
+                x = x + 1
+        else:
+            if lst[x] > lst[x-1]:
+                seq.append(lst[x])
+                x = x + 1
+            else:
+                x = x + 1
+    return seq		#Returns the highest sequence of the numbers
+l = [13,5,6,8,15,9,3]
+print(Sequence(l))
+
+Question 11 (Code) '''Implemented Node Delete Function'''
+class Node(object):
+    def __init__(self, value):
+        self.value=value
+        self.next=None
+        self.prev=None
+
+class List(object):
+    def __init__(self):
+        self.head=None
+        self.tail=None
+    def delete(self,n):         #Delete node Function
+        if n.prev != None:
+            n.prev.next = n.next
+        else:
+            self.head = n.next
+        if n.next != None:
+            n.next.prev = n.prev
+        else:
+            self.tail = n.prev
+    def insert(self,n,x):
+        if n!=None:
+            x.next=n.next
+            n.next=x
+            x.prev=n
+            if x.next!=None:
+                x.next.prev=x              
+        if self.head==None:
+            self.head=self.tail=x
+            x.prev=x.next=None
+        elif self.tail==n:
+            self.tail=x
+    def display(self):
+        values=[]
+        n=self.head
+        while n!=None:
+            values.append(str(n.value))
+            n=n.next
+        print("List: ",",".join(values))
+
+if __name__ == '__main__':
+    l=List()
+    l.insert(None, Node(4))
+    l.insert(l.head,Node(6))
+    l.insert(l.head,Node(8))
+    l.remove(l.head)
+    l.display() l.display()
+Question 12 '''Tree Sort & InOrder Function'''
+class BinTreeNode(object):
+ 
+    def __init__(self, value):
+      
+        self.value=value
+        self.left=None
+        self.right=None
+ 
+       
+def tree_insert(tree, item):
+    if tree==None:
+        tree=BinTreeNode(item)
+    else:
+        if(item < tree.value):
+            if(tree.left==None):
+                tree.left=BinTreeNode(item)
+            else:
+                tree_insert(tree.left,item)
+        else:
+            if(tree.right==None):
+                tree.right=BinTreeNode(item)
+            else:
+                tree_insert(tree.right,item)
+    return(tree)
+ 
+def postorder(tree):
+    if(tree.left!=None):
+        postorder(tree.left)
+    if(tree.right!=None):
+        postorder(tree.right)
+    print(tree.value)
+ 
+ 
+def in_order(tree):       #INORDER FUNCTION THAT IS IMPLEMENTED
+  inOrderStack = []       #The empty Stack
+  inOrderList = []
+  currentNode = tree
+  complete = False
+
+  while complete == False:
+    if currentNode != None:
+      inOrderStack.append(currentNode) #Adds to stack
+      currentNode = currentNode.left #Declaring node is left child
+
+    
+
+
+else:
+      if len(inOrderStack) > 0:
+        currentNode = inOrderStack.pop()
+        inOrderList.append(currentNode.value)
+        currentNode = currentNode.right #Declaring node is right child
+
+      else:
+        complete = True
+
+  print("In Order List >> " + str(inOrderList))
+  
+if __name__ == '__main__':
+   
+  t=tree_insert(None,6);
+  tree_insert(t,10)
+  tree_insert(t,5)
+  tree_insert(t,2)
+  tree_insert(t,3)
+  tree_insert(t,4)
+  tree_insert(t,11)
+  in_order(t)
