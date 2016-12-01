@@ -1,0 +1,10 @@
+import random
+list1 = [1, 2, 3, 4, 5, 6, 7] #The list being used
+for x in range (20):          #Loop to the array length
+    Num1 = random.randint(0,len(list1)-1)
+    Num2 = random.randint(0,len(list1)-1) #Create temp list of random numbers from loop
+
+    temp = list1[Num1]
+    list1[Num1] = list1[Num2]   #Switching the arrays around
+    list1[Num2] = temp
+print (list1)
