@@ -1,0 +1,27 @@
+Question 5 ''' Function for addition, subtraction and multiplication for two matrices'''
+Pseudocode
+Function adding (matrixb, matrixc):
+	For X in range from 0 to length of matrixb
+		For Y in range from 0 to length of matrixc index 0(N)
+			Sum[X][Y]  matrixb[X][Y]+matrixc[X][Y]
+Return sum
+
+Function minus (matrixb, matrixc):
+	For X in range from 0 to length of matrixb
+		For Y in range from 0 to length of matrixc index 0(N)
+			Sum[X][Y]  matrixb[X][Y]+matrixc[X][Y]
+Return sum
+
+Function multiply (matrixb, matrixc):
+	For X in range from 0 to length of matrix1
+		For Y in range from 0 to length of matrix2 index 0(N)
+			For Z in range from 0 to length of matrix1
+			result[X][Y]  (result[X][Y] + (matrix1[X][Y] * matrix2[Z][Y])
+Return result
+
+Q  multiply(matrixb, matrixc)
+W adding(matrixb, matrixc)
+E multiply(W, 2)
+Result minus(Q, E)	
+
+Big O Notation = O(N^3) (Three nested loops)
