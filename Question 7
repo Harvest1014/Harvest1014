@@ -1,0 +1,28 @@
+Question 7 '''Function that checks if a number is a prime number'''
+Pseudocode
+FUNCTION PRIME_orNot(temp, x)
+IF x  1
+	Print “Is not prime”
+ELSE
+	IF temp == x:
+		PRINT “Is prime”
+	ELSE
+		IF x is %temp == 0
+			Print “Is prime”
+		ELSE
+			RETURN PRIME_orNot (temp+1, x)
+Code
+x = int(input("Enter number"))
+temp = 2
+def prime_orNot(temp, x):
+	if x <= 1:
+		print("Not prime") #declares if the number is less or equal to 1 it’s not a prime
+	else:
+		if temp == x:
+			print("Prime")  #Base case because of the temp == 2
+		else:
+			if (x % temp) == 0:  #Divisible with remainder 0
+				print("Not prime")
+			else:
+				return prime_orNot(temp+1, x)
+print(prime_orNot(temp, x))
