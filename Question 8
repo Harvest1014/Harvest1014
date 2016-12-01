@@ -1,0 +1,23 @@
+Question 8 '''Function the removes vowels from a sentence'''
+Pseudocode
+FUNCTION REMOVE_VOWEL(string)
+IF STRING LENGTH = 0
+IF STRING [0] in vowel
+		RETURN(“” + FUNCTION (INPUT -1 CHARACTER) 
+	ELSE
+		RETURN(INPUT[0] REMOVE_VOWEL(INPUT – 1 CHARACTER)
+ELSE
+	RETURN
+Code
+x = str(input("Enter A Word"))
+def remove_vowel(x):
+        Vowels = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")  #Declares what is going to be removed
+        if x: 
+                if x[0] in Vowels: 
+                        return(""+remove_vowel(x[1:]))  #Removes vowels from the sentence
+                else:
+                        return(x[0]+remove_vowel(x[1:]))  #Keeps the words that arent declared 
+        else:
+                return("")  #Returns empty if there are no words
+
+print(remove_vowel(x))
