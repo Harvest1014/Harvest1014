@@ -1,0 +1,9 @@
+def prime_of_five (x):
+    Five = 5             #Declaring the number that’s going to be used
+    Number = 0		#Output value of 0s
+
+    while x >= Five:
+        Number += x // Five         #Divides number with 5 
+        Five *= 5		#Multiply by 5
+    return Number
+print(prime_of_five(10))
