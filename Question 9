@@ -1,0 +1,40 @@
+
+Question 9 '''Function to find values within the list''' 
+Pseudocode
+FUNCTION BINARY SEARCH(list, a, b)
+    FIRST  0
+    LAST  len(data) - 1
+    FOUND  False
+    WHILE first <= last and not found
+        MIDPOINT  (first + last) // 2
+        IF data[midpoint] in another_list
+            found  True
+        ELSE
+            IF max(another_list) < data [midpoint]:
+                last  midpoint - 1
+            ELSE
+                first  midpoint + 1
+        RETURN found
+b  list
+
+
+
+Code - Big O Notation = O(N^2)
+list = [2,3,5,7,9,13,17,19,23,27,29]    #List being used
+def Binary_Search(data, a, b):
+    first = 0       #A Pointer of the list
+    last = len(data) - 1
+    found = False
+    while first <= last and not found:
+        midpoint = (first + last) // 2
+        print(first,last,data[midpoint]) #outputs the range
+        if data[midpoint] in range(a,b):
+            found = True
+        else:
+            if (a,b) < data [midpoint]:
+                last = midpoint - 1
+            else:
+                first = midpoint + 1
+    return found   #Retrieves the output of the data
+b = list
+print (Binary_Search(b,10,15))
