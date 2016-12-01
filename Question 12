@@ -1,0 +1,61 @@
+Question 12 '''Tree Sort & InOrder Function'''
+class BinTreeNode(object):
+    def __init__(self, value):
+        self.value=value
+        self.left=None
+        self.right=None
+ 
+def tree_insert(tree, item):
+    if tree==None:
+        tree=BinTreeNode(item)
+    else:
+        if(item < tree.value):
+            if(tree.left==None):
+                tree.left=BinTreeNode(item)
+            else:
+                tree_insert(tree.left,item)
+        else:
+            if(tree.right==None):
+                tree.right=BinTreeNode(item)
+            else:
+                tree_insert(tree.right,item)
+    return(tree)
+ 
+def postorder(tree):
+    if(tree.left!=None):
+        postorder(tree.left)
+    if(tree.right!=None):
+        postorder(tree.right)
+    print(tree.value)
+ 
+def in_order(tree):       #INORDER FUNCTION THAT IS IMPLEMENTED
+  inOrderStack = []       #The empty Stack
+  inOrderList = []
+  currentNode = tree
+  complete = False      #To end while loop
+
+  while complete == False:
+    if currentNode != None: #Checks if current node is empty
+      inOrderStack.append(currentNode) #Adds to stack
+      currentNode = currentNode.left #Declaring node is left child
+
+    else:
+      if len(inOrderStack) > 0: 
+        currentNode = inOrderStack.pop() 
+        inOrderList.append(currentNode.value) #appends the current value of the node to the final list
+        currentNode = currentNode.right #Declaring node is right child
+
+      else:
+        complete = True
+
+  print("In Order List >> " + str(inOrderList))
+  
+def tree_sort(aList):
+    t=tree_insert(None,aList[0]);
+    for i in range(1,len(aList)):
+        tree_insert(t,aList[i])
+    in_order(t)
+    
+if __name__ == '__main__':
+   
+    tree_sort([5,10,6,4,2,3,11])
