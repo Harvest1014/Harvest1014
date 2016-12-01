@@ -7,7 +7,7 @@ import random
 list1 = [1, 2, 3, 4, 5, 6, 7] #The list being used
 for x in range (20):          #Loop to the array length
     Num1 = random.randint(0,len(list1)-1)
-    Num2 = random.randint(0,len(list1)-1 #Create temp list of random numbers from loop
+    Num2 = random.randint(0,len(list1)-1) #Create temp list of random numbers from loop
 
     temp = list1[Num1]
     list1[Num1] = list1[Num2]   #Switching the arrays around
@@ -288,7 +288,7 @@ if __name__ == '__main__':
     l.insert(None, Node(4))
     l.insert(l.head,Node(6))
     l.insert(l.head,Node(8))
-    l.remove(l.head)
+    l.delete(l.head)
     l.display() l.display()
 Question 12 '''Tree Sort & InOrder Function'''
 class BinTreeNode(object):
@@ -338,7 +338,7 @@ def in_order(tree):       #INORDER FUNCTION THAT IS IMPLEMENTED
     
 
 
-else:
+  else:
       if len(inOrderStack) > 0:
         currentNode = inOrderStack.pop()
         inOrderList.append(currentNode.value)
