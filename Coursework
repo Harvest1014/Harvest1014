@@ -289,7 +289,7 @@ if __name__ == '__main__':
     l.insert(l.head,Node(6))
     l.insert(l.head,Node(8))
     l.delete(l.head)
-    l.display() l.display()
+    l.display()
 Question 12 '''Tree Sort & InOrder Function'''
 class BinTreeNode(object):
  
