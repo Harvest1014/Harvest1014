@@ -1,0 +1,23 @@
+Question 4
+Week 1 – Random Number - Big Notation = O(N)
+import random
+list1 = [1, 2, 3, 4, 5, 6, 7]						      1
+for x in range (20):						              N
+    Num1 = random.randint(0,len(list1)-1)			N
+    Num2 = random.randint(0,len(list1)-1)			N
+
+    temp = list1[Num1]						            N
+    list1[Num1] = list1[Num2]					        N
+    list1[Num2] = temp						            N
+print (list1)							                    1
+
+
+Week 1 – Prime of Five - Big Notation = O(N)
+def prime_of_five (x):
+    Five = 5							                    1
+    Number = 0							                  1
+    while x >= Five:						              N
+        Number += x // Five					          N
+        Five *= 5							                N
+    return Number						                  N
+print(prime_of_five(10))					            1
