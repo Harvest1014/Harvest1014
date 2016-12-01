@@ -19,7 +19,7 @@ b  list
 
 
 
-Code - Big O Notation = O(N^2)
+Code - Big O Notation = O(N)
 list = [2,3,5,7,9,13,17,19,23,27,29]    #List being used
 def Binary_Search(data, a, b):
     first = 0       #A Pointer of the list
