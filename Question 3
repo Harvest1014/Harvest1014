@@ -1,0 +1,23 @@
+Question 3 ''' Function that returns the highest perfect square'''
+
+Pseudocode
+INPUT = INPUT (integer)
+FUNCTION SQUARE (INPUT):
+OUTPUT = 0
+INPUT = square root (INPUT)
+INPUT = round down (INPUT)
+OUTPUT = INPUT * INPUT
+
+
+
+
+Code
+i = int(input("Enter Number"))
+import math
+def square(i):
+	result = 0
+	i = math.sqrt(i)     #Where it square roots the number
+	i = math.floor(i)    #Where it rounds it down
+	result = i*i 	#Squares it up
+	print(result)
+print(square(i))
