@@ -1,0 +1,29 @@
+Question 6 '''Function that reverse the words in a sentence'''
+Pseudocode
+FUNCTION SWITCH(sentence)
+    answer  ' '
+    temp  ' '
+    FOR char in sentence:
+        IF char ≠ ' '
+            temp  char
+        ELSE
+            answer  temp + ' ' + answer
+            temp  ' '
+    answer  temp + ' ' + answer
+    RETURN answer
+
+Big O Notation = O(N)
+
+Code
+def Reverse_sentence(sentence):
+    word = ''
+    temp = ''			#The string that’s being used to switch around the words
+    for char in sentence:
+        if char != ' ':        
+            temp += char
+        else:
+            word = temp + ' ' + word    #Where it switches the words
+            temp = ''
+    word = temp + ' ' + word
+    return word               #Connects the words back together
+print(Reverse_sentence("Hello to everybody"))
