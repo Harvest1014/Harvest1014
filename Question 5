@@ -16,7 +16,7 @@ Function multiply (matrixb, matrixc):
 	For X in range from 0 to length of matrix1
 		For Y in range from 0 to length of matrix2 index 0(N)
 			For Z in range from 0 to length of matrix1
-			result[X][Y]  (result[X][Y] + (matrix1[X][Y] * matrix2[Z][Y])
+				result[X][Y]  (result[X][Y] + (matrix1[X][Y] * matrix2[Z][Y])
 Return result
 
 Q  multiply(matrixb, matrixc)
